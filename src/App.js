@@ -73,8 +73,6 @@ function reducer(state, action) {
       }
 
     case 'answered':
-      console.log(state.answer);
-      console.log(state.questions[state.index].correctAnswer);
       return {
         ...state,
         answer: action.payload,

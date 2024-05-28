@@ -1,18 +1,18 @@
 function Options({ options, correctAnswer, answer, dispatch }) {
+  // console.log('Options re-render');
   const hasAnswered = answer !== null;
-
   return (
     <div className="options">
-      {options.map((option) => (
+      {options.map(option => (
         <button
-          className={`btn ${answer === option ? "answer" : ""}
-           ${hasAnswered && option === correctAnswer && "correct"} ${
-            hasAnswered && option !== correctAnswer && "wrong"
+          className={`btn ${answer === option ? 'answer' : ''}
+           ${hasAnswered && option === correctAnswer && 'correct'} ${
+            hasAnswered && option !== correctAnswer && 'wrong'
           } `}
           key={option}
           disabled={hasAnswered}
-          onClick={(e) =>
-            dispatch({ type: "answered", payload: e.target.textContent })
+          onClick={e =>
+            dispatch({ type: 'answered', payload: e.target.textContent })
           }
         >
           {option}
